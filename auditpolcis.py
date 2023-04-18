@@ -89,12 +89,6 @@ def filter_trash(cis_dict, auditpol_dict):
                         missing_in_cis[category] = set()
                     missing_in_cis[category].add(subcategory)
 
-    # print("In cis dict but missing in auditpol_dict:")
-    # pprint(missing_in_auditpol, indent=3)
-    #
-    # print("in auditpol dict but not CIS dict")
-    # pprint(missing_in_cis, indent=3)
-
     for category, subcategories in list(cis_dict.items()):
         if category not in auditpol_dict:
             del cis_dict[category]
@@ -110,9 +104,6 @@ def filter_trash(cis_dict, auditpol_dict):
             for subcategory in list(subcategories.keys()):
                 if subcategory not in cis_dict[category]:
                     del auditpol_dict[category][subcategory]
-
-    # print("Updated cis_dict:", cis_dict)
-    # print("Updated auditpol_dict:", auditpol_dict)
 
     return [auditpol_dict, cis_dict, missing_in_auditpol, missing_in_cis]
 

@@ -1,0 +1,186 @@
+"Account Logon":
+  "Credential Validation":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success and Failure"
+  "Kerberos Authentication Service":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success and Failure"
+  "Kerberos Service Ticket Operations":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success and Failure"
+  "Other Account Logon Events":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+"Account Management":
+  "Application Group Management":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success and Failure"
+  "Computer Account Management":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success"
+  "Distribution Group Management":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success"
+  "Other Account Management Events":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success"
+  "Security Group Management":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success"
+  "User Account Management":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success and Failure"
+"DS Access":
+  "Detailed Directory Service Replication":
+    "CIS Benchmark": false
+    "CIS Recommended": "Success"
+  "Directory Service Access":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+  "Directory Service Changes":
+    "CIS Benchmark": false
+    "CIS Recommended": "Success"
+  "Directory Service Replication":
+    "CIS Benchmark": false
+    "CIS Recommended": "Success and Failure"
+"Detailed Tracking":
+  "DPAPI Activity":
+    "CIS Benchmark": false
+    "CIS Recommended": "No auditing"
+  "Plug and Play Events":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success"
+  "Process Creation":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success"
+  "Process Termination":
+    "CIS Benchmark": false
+    "CIS Recommended": "Success"
+  "RPC Events":
+    "CIS Benchmark": false
+    "CIS Recommended": "Success"
+  "Token Right Adjusted Events":
+    "CIS Benchmark": false
+    "CIS Recommended": "Success"
+"Logon/Logoff":
+  "Account Lockout":
+    "CIS Benchmark": true
+    "CIS Recommended": "Failure"
+  "Group Membership":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success"
+  "IPsec Extended Mode":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+  "IPsec Main Mode":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+  "IPsec Quick Mode":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+  "Logoff":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success"
+  "Logon":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success and Failure"
+  "Network Policy Server":
+    "CIS Benchmark": false
+    "CIS Recommended": "Success"
+  "Other Logon/Logoff Events":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success and Failure"
+  "Special Logon":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success"
+  "User / Device Claims":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+"Object Access":
+  "Application Generated":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+  "Central Policy Staging":
+    "CIS Benchmark": false
+    "CIS Recommended": "Success"
+  "Certification Services":
+    "CIS Benchmark": false
+    "CIS Recommended": "Success"
+  "Detailed File Share":
+    "CIS Benchmark": true
+    "CIS Recommended": "Failure"
+  "File Share":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success and Failure"
+  "File System":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+  "Filtering Platform Connection":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+  "Filtering Platform Packet Drop":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+  "Handle Manipulation":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+  "Kernel Object":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+  "Other Object Access Events":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success and Failure"
+  "Registry":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+  "Removable Storage":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success and Failure"
+  "SAM":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+"Policy Change":
+  "Audit Policy Change":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success"
+  "Authentication Policy Change":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success"
+  "Authorization Policy Change":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success"
+  "Filtering Platform Policy Change":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+  "MPSSVC Rule-Level Policy Change":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success and Failure"
+  "Other Policy Change Events":
+    "CIS Benchmark": true
+    "CIS Recommended": "Failure"
+"Privilege Use":
+  "Non Sensitive Privilege Use":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+  "Other Privilege Use Events":
+    "CIS Benchmark": false
+    "CIS Recommended": "No Auditing"
+  "Sensitive Privilege Use":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success and Failure"
+"System":
+  "IPsec Driver":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success and Failure"
+  "Other System Events":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success and Failure"
+  "Security State Change":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success"
+  "Security System Extension":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success"
+  "System Integrity":
+    "CIS Benchmark": true
+    "CIS Recommended": "Success and Failure"

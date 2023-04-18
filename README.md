@@ -13,3 +13,4 @@ for these events, versus the security value. In nearly all cases, the recommenda
 
 ![image](https://user-images.githubusercontent.com/1404877/232906246-0feec791-7395-4196-9437-ce243b5a9361.png)
 
+Further details on usage and other background info is at https://www.seven-stones.biz/blog/auditpolcis-automating-windows-siem-cis-benchmarks-testing/

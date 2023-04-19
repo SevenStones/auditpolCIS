@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 
+"""
+genyaml.py can be used to create the cis-benchmarks.yaml file from the spreadsheet
+('CIS-Audit-Reqs-Windows2019Server.xlsx'). So edit the spreadsheet, or the YAML
+file directly to customise e.g. Subcategory names to match auditpol command output,
+or change the verdicts.
+"""
+
 import pandas as pd
 from collections import defaultdict
 from ruamel.yaml import YAML

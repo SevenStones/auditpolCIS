@@ -11,6 +11,14 @@ for these events, versus the security value. In nearly all cases, the recommenda
 - The YAML file cis-benchmarks.yaml is the YAML representation of the CIS Benchmark guideline for each Subcategory.
 - The command run under SSH is auditpol /get /category:*
 
+The automated assessment results from AuditpolCIS, as it's based on CIS Benchmarks, helps in the support of meeting audit requirements for a number of programs, not least PCI-DSS: 
+
+  - Audit account logon events: Helps in monitoring and logging all attempts to authenticate user credentials (PCI-DSS Requirement 10.2.4).
+  - Audit object access: Monitors access to objects like files, folders, and registry keys that store cardholder data (PCI-DSS Requirement 10.2.1).
+  - Audit privilege use: Logs any event where a user exercises a user right or privilege (PCI-DSS Requirement 10.2.2)
+
+
+
 ![image](https://user-images.githubusercontent.com/1404877/232906246-0feec791-7395-4196-9437-ce243b5a9361.png)
 
 Further details on usage and other background info is at https://www.seven-stones.biz/blog/auditpolcis-automating-windows-siem-cis-benchmarks-testing/

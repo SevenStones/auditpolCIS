@@ -17,7 +17,8 @@ The automated assessment results from AuditpolCIS, as it's based on CIS Benchmar
   - Audit object access: Monitors access to objects like files, folders, and registry keys that store cardholder data (PCI-DSS Requirement 10.2.1).
   - Audit privilege use: Logs any event where a user exercises a user right or privilege (PCI-DSS Requirement 10.2.2)
 
-
+Note that the script also generates output relevant to other audit/compliance/regulatory requirements to do with the retention of events data. 
+Local log files sizes and retention policies are useful in assessing compliance with e.g. PCI-DSS 4 5.3.4 and 10.5.1 requirements. 
 
 ![image](https://user-images.githubusercontent.com/1404877/232906246-0feec791-7395-4196-9437-ce243b5a9361.png)
 

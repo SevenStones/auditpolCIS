@@ -35,6 +35,45 @@ def load_target_variables():
 
     return [hostname, username, password]
 
+def retention(ssh, secrets):
+
+    hostname, username, password = secrets
+    commands = [
+        'C:\\Windows\\System32\\wevtutil.exe gl System',
+        'C:\\Windows\\System32\\wevtutil.exe gl Application',
+        'C:\\Windows\\System32\\wevtutil.exe gl Security'
+    ]
+
+    try:
+        # Authenticate to Windows Server
+        ssh.connect(hostname, username=username, password=password, timeout=10)
+
+    except paramiko.AuthenticationException:
+        print("[" + Fore.RED + "fail" + Style.RESET_ALL + "] Error: SSH Authentication failed. Please check your "
+                                                          "username and password.")
+    except paramiko.SSHException:
+        print("[" + Fore.RED + "fail" + Style.RESET_ALL + "] Error: An SSH-related error occurred.")
+    except Exception as e:
+        print("[" + Fore.RED + "fail" + Style.RESET_ALL + "] " + str(e))
+    else:
+        for command in commands:
+            print(f"Executing command: {command}")
+            print("Here's the highlights...")
+            print("\n")
+            # Execute the command
+            stdin, stdout, stderr = ssh.exec_command(command)
+
+            # Get the output and error
+            output = stdout.read().decode()
+            error = stderr.read().decode().strip()
+
+            if error:
+                print(f"An error occurred: {error}")
+            else:
+                for line in output.split('\n'):
+                    if any(keyword in line for keyword in ["logFileName", "retention", "autoBackup", "maxSize"]):
+                        print(line.strip())
+            print("\n")
 
 def get_dict_from_yaml():
 
@@ -108,29 +147,9 @@ def filter_trash(cis_dict, auditpol_dict):
     return [auditpol_dict, cis_dict, missing_in_auditpol, missing_in_cis]
 
 
-def test_audit_policy():
+def test_audit_policy(ssh, secrets):
 
-    secrets = load_target_variables()
     hostname, username, password = secrets
-
-    # Set up SSH client
-    ssh = paramiko.SSHClient()
-    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-
-    def check_ssh_availability(host, port=22, timeout=10):
-        try:
-            sock = socket.create_connection((host, port), timeout)
-            sock.close()
-            return True
-        except socket.error:
-            return False
-
-    if not check_ssh_availability(hostname):
-        print("[" + Fore.RED + "fail" + Style.RESET_ALL + "] SSH service is not available on the specified "
-                                                          "hostname/IP address. Either an invalid host was "
-                                                          "specified or SSH is down or firewalled on the specified "
-                                                          "target.")
-        exit()
 
     try:
         # Authenticate to Windows Server
@@ -261,4 +280,23 @@ def test_audit_policy():
 
 
 if __name__ == '__main__':
-    test_audit_policy()
+    # Set up SSH client
+    ssh = paramiko.SSHClient()
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+    def check_ssh_availability(host, port=22, timeout=10):
+        try:
+            sock = socket.create_connection((host, port), timeout)
+            sock.close()
+            return True
+        except socket.error:
+            return False
+
+    secrets = load_target_variables()
+    test_audit_policy(ssh, secrets)
+    print("\n")
+    print("Log Size and Retention Settings")
+    print("-------------------------------")
+    print("\n")
+
+    retention(ssh, secrets)
